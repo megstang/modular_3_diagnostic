@@ -11,10 +11,18 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'faraday'
 gem 'figaro'
+gem 'faker'
+gem 'factory_bot_rails'
+gem 'active_model_serializers'
+
 
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
+  gem 'pry'
+  gem 'shoulda-matchers'
+  gem 'launchy'
+  gem 'awesome_print'
 end
 
 group :development do
@@ -27,4 +35,3 @@ group :test do
   gem 'webmock'
   gem 'capybara'
 end
-
