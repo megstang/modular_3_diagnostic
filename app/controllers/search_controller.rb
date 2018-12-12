@@ -1,4 +1,7 @@
 class SearchController <ApplicationController
   def index
-  end 
+    binding.pry
+    search = Search.new(zipcode: params[:q])
+    @stations = search.stations
+  end
 end

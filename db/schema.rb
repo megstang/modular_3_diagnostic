@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181212162935) do
+ActiveRecord::Schema.define(version: 20181212164722) do
 
   create_table "searches", force: :cascade do |t|
-    t.integer "zipcode"
+    t.string "zipcode"
+  end
+
+  create_table "stations", force: :cascade do |t|
+    t.string "name"
+    t.text "address"
+    t.string "fuel_type"
+    t.integer "distance"
+    t.string "access_time"
   end
 
 end
