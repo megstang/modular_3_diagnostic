@@ -1,7 +1,7 @@
 class Search <ActiveRecord::Base
 
   def initialize(zip)
-    @zip = zip
+    @zip = zip[:zipcode]
   end
 
   def stations
@@ -11,7 +11,7 @@ class Search <ActiveRecord::Base
   end
 
   def get_search_results
-    url = "/api/alt-fuel-stations/v1/nearest.json?api_key=#{ENV['ALT_FUEL_API_KEY']}&zip=#{@zip}"
+    url ="/api/alt-fuel-stations/v1/nearest.json?api_key=#{ENV['ALT_FUEL_API_KEY']}&location=#{@zip}&fuel_type=ELEC,LPG&radius=6.0"
     JSON.parse(conn.get(url).body, symbolize_names: true)
   end
 
