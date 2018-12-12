@@ -1,10 +1,10 @@
 <h1>Closest Stations</h1>
 <div class="stations">
   <% @stations.each do |station| %>
-    <h3>Station: <%= station.name %></h3>
-    <h3>Address: <%= station.address %></h3>
-    <h3>Fuel Type: <%= station.fuel_type %></h3>
-    <h3>Distance from Zip: <%= station.distance %></h3>
-    <h3>Access Time: <%= station.access_time %></h3>
+    <h3><%= station.name %></h3>
+    <li>Address: <%= station.address %></li>
+    <li>Fuel Type: <%= station.fuel_type %></li>
+    <li>Distance from Zip: <%= station.distance %></li>
+    <li>Access Time: <%= station.access_time %></li>
   <% end %>
 </div>
