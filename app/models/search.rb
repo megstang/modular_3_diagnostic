@@ -7,8 +7,6 @@ class Search <ActiveRecord::Base
   def stations
     @stations ||= get_search_results.map do |station_data|
                   station = Station.new(station_data)
-                  binding.pry
-                  station.save
                 end
   end
 
