@@ -9,7 +9,7 @@ describe 'as a user when I visit /' do
     # And I click "Locate"
     click_on "Locate"
 
-    @stations = Search.last
+    @stations = Search.new(zipcode: '80203').stations
   end
   it 'when I fill in search and click locate I am redirected to /search' do
     # Then I should be on page "/search"
@@ -23,12 +23,12 @@ describe 'as a user when I visit /' do
     # And for each of the stations I should see Name, Address, Fuel Types, Distance, and Access Times
     within('.stations') do
       @stations.each do |station|
-        expect(station.fuel_type).to eq("LPG" || "ELEC")
-        expect(station.name).to exist
-        expect(station.address).to exist
-        expect(station.fuel_type).to exist
-        expect(station.distance).to exist
-        expect(station.access_time).to exist
+        expect(station.fuel_type).to eq("LPG").or(eq("ELEC"))
+        expect(station.name).to be_present
+        expect(station.address).to be_present
+        expect(station.fuel_type).to be_present
+        expect(station.distance).to be_present
+        expect(station.access_time).to be_present
       end
     end
   end
