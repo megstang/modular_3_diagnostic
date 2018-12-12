@@ -5,7 +5,7 @@ class Search <ActiveRecord::Base
   end
 
   def stations
-    @stations ||= get_search_results.map do |station_data|
+    @stations ||= get_search_results[0..9].map do |station_data|
                   station = Station.new(station_data)
                 end
   end
